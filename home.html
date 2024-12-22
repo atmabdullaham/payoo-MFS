@@ -4,9 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payoo Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>Welcome to Payooo!</h1>
-    <script src="js/login.js"></script>
+    <main class="flex justify-center mt-5">
+      <div class="mockup-phone border-primary">
+        <div class="camera"></div>
+        <div class="display">
+          <div class="artboard artboard-demo phone-2">
+            <!-- Content -->
+
+            <!-- Section 1 -->
+            <div class="stats shadow">
+              <div class="stat">
+                <div class="stat-value">8940</div>
+                <div class="stat-title">Total Page Views</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div>
+              <button class="btn">Add Money</button>
+              <button class="btn">Cash Out</button>
+            </div>
+            <div class="divider"></div>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Amount</span>
+                  </label>
+                  <input
+                    id="amount"
+                    type="text"
+                    placeholder="Enter Amount"
+                    class="input input-bordered"
+                    required
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin</span>
+                  </label>
+                  <input
+                    id="addmoney-pin"
+                    type="password"
+                    placeholder="Enter 4 Digit Pin"
+                    class="input input-bordered"
+                    required
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="form-control mt-6">
+                  <button id="add-Money-con" class="btn btn-primary">
+                    Add Money
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- Section 2 -->
+            <!-- Section 3 -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/home.js"></script>
   </body>
 </html>
