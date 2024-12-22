@@ -13,9 +13,9 @@ document.getElementById('login-button').addEventListener("click", function (even
  // Step-4: validate number and pin
 
  if (number === "018" && pin === "123") {
-  console.log('You are loged in')
+  window.location.href = '/home.html'
  } else {
-  alert("Wrong Number and Pin")
+  alert("Wrong Number or Pin")
  }
 
 
