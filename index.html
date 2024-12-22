@@ -13,14 +13,57 @@
   </head>
   <body>
     <header></header>
-    <main>
+    <main class="flex justify-center mt-5">
       <div class="mockup-phone">
         <div class="camera"></div>
         <div class="display">
-          <div class="artboard artboard-demo phone-1">Hi.</div>
+          <div class="artboard artboard-demo phone-2">
+            <!-- Login Section -->
+            <div class="hero bg-base-200 min-h-screen">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div
+                  class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl"
+                >
+                  <form class="card-body">
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Mobile Number</span>
+                      </label>
+                      <input
+                        id="number"
+                        type="text"
+                        placeholder="Enter Mobile Number"
+                        class="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">4 Digit Pin</span>
+                      </label>
+                      <input
+                        id="pin"
+                        type="password"
+                        placeholder="Enter 4 Digit Pin"
+                        class="input input-bordered"
+                        required
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div class="form-control mt-6">
+                      <button id="login-button" class="btn btn-primary">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <footer></footer>
+    <script src="js/login.js"></script>
   </body>
 </html>
