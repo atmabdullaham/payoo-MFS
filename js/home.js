@@ -2,36 +2,58 @@
  * step-1: Add event listener and prevent reload after form submit
  */
 
+// reuseable function
+
+function getInputValue(id) {
+ const value = document.getElementById(id).value
+ const valueNumber = parseFloat(value);
+ return valueNumber
+}
+function getInnerText(id) {
+ const text = document.getElementById(id).innerText;
+ const textNumber = parseFloat(text);
+ return textNumber
+}
+
 
 document.getElementById("add-Money-con").addEventListener("click", function (event) {
  event.preventDefault();
- const money = parseFloat(document.getElementById("amount").value);
+ //......
 
- const pin = document.getElementById('account-pin').value;
- console.log(money, pin)
+ const money = getInputValue("amount");
+ const pin = getInputValue('account-pin');
 
- if (pin === "123") {
-  const balance = parseFloat(document.getElementById("account-balance").innerText);
+ if (pin == "123") {
+  const balance = getInnerText("account-balance");
   const newBalance = balance + money;
   document.getElementById("account-balance").innerText = newBalance;
-  console.log(newBalance)
  } else {
-  console.log("Wrong Pin")
+  alert("Wrong Pin")
  }
 
 })
 
-// 
+//.......
+// reuseable functions
+//1
+function removeClass(id, cl) {
+ return document.getElementById(id).classList.remove(cl);
+}
+//2
+function addClass(id, cl) {
+ return document.getElementById(id).classList.add(cl);
+}
+//.......
 document.getElementById('add-money').addEventListener("click", function () {
- document.getElementById("form-container").classList.remove("hidden")
- document.getElementById("add-Money-con").classList.remove("hidden")
- document.getElementById("cashout-con").classList.add("hidden")
+ removeClass("form-container", "hidden")
+ removeClass("add-Money-con", "hidden")
+ addClass("cashout-con", "hidden")
 })
 //
 document.getElementById('cash-out').addEventListener("click", function () {
- document.getElementById("form-container").classList.remove("hidden")
- document.getElementById("cashout-con").classList.remove("hidden")
- document.getElementById("add-Money-con").classList.add("hidden")
+ removeClass("form-container", "hidden")
+ removeClass("cashout-con", "hidden")
+ addClass("add-Money-con", "hidden")
 })
 
 
@@ -39,18 +61,16 @@ document.getElementById('cash-out').addEventListener("click", function () {
 
 document.getElementById("cashout-con").addEventListener("click", function (event) {
  event.preventDefault();
- const money = parseFloat(document.getElementById("amount").value);
+ const money = getInputValue("amount")
+ const pin = getInputValue('account-pin')
 
- const pin = document.getElementById('account-pin').value;
 
-
- if (pin === "123") {
-  const balance = parseFloat(document.getElementById("account-balance").innerText);
+ if (pin == "123") {
+  const balance = getInnerText("account-balance")
   const newBalance = balance - money;
   document.getElementById("account-balance").innerText = newBalance;
 
  } else {
-  console.log("Wrong Pin")
+  alert("Wrong Pin")
  }
-
 })
